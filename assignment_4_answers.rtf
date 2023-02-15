@@ -1,0 +1,21 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2707
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgray\c0;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\})}{\leveltext\leveltemplateid1\'02\'00);}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx220\tx720\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li720\fi-720\pardirnatural\partightenfactor0
+\ls1\ilvl0
+\f0\fs22 \cf2 {\listtext	1)	}\CocoaLigature0 makeblastdb -in /Users/epathak33/Desktop/bioinformatics_for_biologists/assignment_4/mystery_transcripts.fasta -dbtype nucl -out /Users/epathak33/Desktop/bioinformatics_for_biologists/assignment_4/mystery_transcripts_db\CocoaLigature1 \
+{\listtext	2)	}\CocoaLigature0 makeblastdb -in /Users/epathak33/Desktop/bioinformatics_for_biologists/assignment_4/mystery_proteins.fasta -dbtype prot -out /Users/epathak33/Desktop/bioinformatics_for_biologists/assignment_4/mystery_proteins_db\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\ls1\ilvl0\CocoaLigature1 {\listtext	3)	}\CocoaLigature0 blastn -query mystery_nucleotide_query.fasta -task megablast -db mystery_transcripts_db -out number_3_answer.txt -evalue 1e-5 -max_hsps 7 -outfmt 7\
+\ls1\ilvl0\CocoaLigature1 {\listtext	4)	}T010027234997 is the most similar. (91.965 %identity)\
+{\listtext	5)	}\CocoaLigature0 awk '$3 >90 \{print\}' number_3_answer.txt | awk '\{print $2\}'| sed -n -e 5,7p >> /Users/epathak33/Desktop/bioinformatics_for_biologists/assignment_4/most_similar_txt\
+\ls1\ilvl0\CocoaLigature1 {\listtext	6)	}\CocoaLigature0 blastp -query mystery_protein_query.fasta -task blastp -db mystery_proteins_db -out number_6_answer.txt -evalue 1e-5 -max_hsps 15 -outfmt 7\
+\ls1\ilvl0\CocoaLigature1 {\listtext	7)	}P010027090796 has the best hit.\
+{\listtext	8)	}\CocoaLigature0 Coffea arabica\
+\ls1\ilvl0\CocoaLigature1 {\listtext	9)	}Gardenia jasminoides\
+{\listtext	10)	}Putative catalase\CocoaLigature0 \
+}
